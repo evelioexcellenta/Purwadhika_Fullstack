@@ -39,59 +39,129 @@ console.log (`${cm} cm sama dengan ${km} km`)
 
 
 //4. angka ke format mata uang Rp
-// let uang = 50000
-// let strUang = uang.toString()
-// let format = ""
-// for (let i=strUang.length; i<0; i++){
-
-// }
-
-
-
-// for (let i=10; i<=uang; i=i*10){
-//     console.log (i)
-// }
-
-
-
+let uang = 5000000
+let strUang = uang.toString()
+let formatR = ""
+let format = ""
+let j=1
+for (let i=strUang.length-1; i>=0; i--){
+    formatR += strUang[i]
+    if (j%3 === 0 &&  j!= strUang.length){
+        formatR += "."
+    }
+    j++
+}
+for (let i=formatR.length-1; i>=0; i--){
+    format += formatR[i]
+}
+console.log(`\nhasil konversi format ${uang} ke Rp = Rp${format}.00`)
 
 //5. remove string yang dicari
 let stringAsal = "Hello World";
 let searchString = "ell";
 let hasilDel = stringAsal.split(searchString).join("")
-
-console.log (`menghilangkan ${searchString} dari ${stringAsal} = ${hasilDel}`)
-
-// for (let i=0; i<needle.length; i++){
-//     needle[i] = haystack[i]
-//     pembanding = pembanding + haystack[i]
-//     if (pembanding = needle){
-//         console.log(pembanding)
-//         break
-//     }
-
-// }
+console.log (`\nmenghilangkan ${searchString} dari ${stringAsal} = ${hasilDel}`)
 
 
 //6. bikin setiap kata diawali kapital
 let kalimat = "hello world"
 let splitKalimat = kalimat.split(" ")
-let result = ""
+let result = []
 
-for (let i=0; i<=kalimat.length; i++){
-    
+for (let i=0; i<=splitKalimat.length-1; i++){
+    result += splitKalimat[i][0].toUpperCase()
+    for (let j=1; j<splitKalimat[1].length; j++){
+        result += splitKalimat[i][j]
+    }
+    result += " "
 }
+console.log(`\nmengganti setiap awal kata ${kalimat} menjadi kapital : ${result} `)
+
 
 //7. reverse string
+let stringR = "Hello World"
+let reversed = ""
+
+for (let i=stringR.length-1; i>=0; i--){
+    reversed += stringR[i]
+}
+console.log(`\nmemutar balik ${stringR} : ${reversed}`)
+
+//8. Tuker lower ke upper dan sebaliknya
+let string8 = "The QuiCk BrOwN Fox"
+let tuker = ""
+
+for (let i=0; i<string8.length; i++){
+    if(string8[i] === string8[i].toUpperCase()){
+        tuker += string8[i].toLocaleLowerCase()
+    }else tuker += string8[i].toUpperCase()
+}
+console.log(`\nmenukar ${string8} dari lower ke upper dan sebaliknya : ${tuker}`)
+
+//9. cari yang terbesar dari 2 angka
+let angka1 = 100
+let angka2 = 50
+
+if (angka1 > angka2){
+    console.log(angka1, `lebih besar dari`, angka2)
+}else console.log(angka2, `lebih besar dari`, angka1)
 
 
-//8. 
+//10. sort 3 angka 
+let number1 = 2
+let number2 = 1
+let number3 = 3
+
+console.log (`\nurutkan bilangan berikut :`, number1, number2, number3)
+
+if (number1 > number2 && number1 > number3 && number2 >number3){
+    console.log(number1, ">", number2, ">", number3)
+}else if (number1 > number2 && number1 > number3 && number3 >number2){
+    console.log(number1, ">", number3, ">", number2)
+    
+}else if (number2 > number1 && number2 > number3 && number1 >number3){
+    console.log(number2, ">", number1, ">", number3)
+}else if (number2 > number1 && number2 > number3 && number3 >number1){
+    console.log(number2, ">", number3, ">", number1)
+}
+
+else if (number3 > number1 && number3 > number2 && number1 >number2){
+    console.log(number3, ">", number1, ">", number2)
+}else if (number3 > number1 && number3 > number2 && number2 >number1){
+    console.log(number3, ">", number2, ">", number1)
+}
+
+
+//11. 1 jika string, 2 jika angka, 3 jika tipe lain
+let input = 312412;
+
+switch (typeof input){
+    case "string" :
+        console.log("1")
+        break
+    case "number" :
+        console.log("2")
+        break
+    default : 
+        console.log("3")
+        break
+}
 
 
 //12. sensor
-// let sensor = "a"
-// let sentence = "an apple a day keeps the doctor away"
-// let hasilSensor = ""
+let sensor = "a"
+let sentence = "an apple a day keeps the doctor away"
+let hasilSensor = ""
+
+for (let i=0; i<=sentence.length-1; i++){
+    if (sentence[i]== sensor){
+        hasilSensor += "*"
+    }else hasilSensor += sentence[i]
+    
+}
+
+console.log (hasilSensor)
+
 // for (let i=0; i>=sentence.length; i++){
 //     if (sentence[i] = sensor){
 //         hasilSensor = 
