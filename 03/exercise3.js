@@ -161,10 +161,3 @@ for (let i=0; i<=sentence.length-1; i++){
 }
 
 console.log (hasilSensor)
-
-// for (let i=0; i>=sentence.length; i++){
-//     if (sentence[i] = sensor){
-//         hasilSensor = 
-//     }
-     
-// }
