@@ -3,6 +3,6 @@ function excel(alphabet){
     let result 
 
     for (let i=0; i<alphabet.length; i++){
-        
+
     }
 }
